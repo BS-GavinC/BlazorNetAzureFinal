@@ -1,0 +1,25 @@
+﻿@layout DemoLayout
+@page "/demo/demo3"
+@using BlazorNetAzure2.Models;
+
+<h3>Demo3</h3>
+
+
+
+
+
+@foreach(User user in Users)
+{
+    <ShowUser user="@user"></ShowUser>
+}
+
+
+
+@foreach (int nbr in MesNombres)
+{
+    @if (nbr % 2 == 0)
+    {
+        <TestComponent valeur="@nbr"></TestComponent>
+    }
+
+}
