@@ -1,0 +1,45 @@
+﻿@layout ExoLayout
+@page "/exo/exo2"
+
+@* Nom
+      - Email
+      - Telephone
+      - Message
+      - Choix d'une couleur*@
+
+
+
+@if(FormValid){
+    <h1 style="color:lawngreen">SUCCESS</h1>
+}
+else{
+<EditForm Model="contactForm" OnValidSubmit="Valid" OnInvalidSubmit="Invalid">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div>
+        <label for="Name">Nom</label>
+        <InputText id="Name" @bind-Value="contactForm.Name"></InputText>
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <InputText id="Email" @bind-Value="contactForm.Email"></InputText>
+    </div>
+    <div>
+        <label for="Phone">Telephone</label>
+        <InputText id="Phone" @bind-Value="contactForm.Phone"></InputText>
+    </div>
+    <div>
+        <label for="Message">Message</label>
+        <InputTextArea id="Message" @bind-Value="contactForm.Message"></InputTextArea>
+    </div>
+    <div>
+        <label for="Color">Couleur</label>
+        <InputText id="Color" @bind-Value="contactForm.Color"></InputText>
+    </div>
+    
+    <div>
+        <button>Valider</button>
+    </div>
+    <ValidationSummary></ValidationSummary>
+</EditForm>
+
+}

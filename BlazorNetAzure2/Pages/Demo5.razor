@@ -1,0 +1,13 @@
+﻿@layout DemoLayout
+@page "/demo/demo5"
+
+<h3>Demo5</h3>
+
+@*@foreach (int i in ListInt)
+{
+    <TestComponent valeur="@i"></TestComponent>
+}*@
+
+<Virtualize Items="ListInt" Context="i">
+    <TestComponent valeur="@i"></TestComponent>
+</Virtualize>

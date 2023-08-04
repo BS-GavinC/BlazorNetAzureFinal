@@ -1,0 +1,45 @@
+﻿@layout DemoLayout
+@page "/demo/demo4/{id:int?}"
+
+<h3>Demo4</h3>
+
+<p>@MaValeur</p>
+
+<input type="text" @bind="MaValeur"/>
+
+<input type="text" @bind="VoitureForm.Brand"/>
+
+<h2>Formulaire Demo = Voiture</h2>
+
+<EditForm Model="VoitureForm" OnValidSubmit="SubmitDone">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div>
+        <label>Brand</label>
+        <InputText @bind-Value="VoitureForm.Brand"></InputText>
+    </div>
+    <div>
+        <label>Model</label>
+        <InputText @bind-Value="VoitureForm.Model"></InputText>
+    </div>
+    <div>
+        <label>Description</label>
+        <InputTextArea @bind-Value="VoitureForm.Description"></InputTextArea>
+    </div>
+    <div>
+        <label>Color</label>
+        <InputText type="Color" @bind-Value="VoitureForm.Color"></InputText>
+        @*// #A232FB*@
+    </div>
+    <div>
+        <label>Price</label>
+        <InputNumber @bind-Value="VoitureForm.Price"></InputNumber>
+    </div>
+
+    <ValidationSummary></ValidationSummary>
+
+    <div>
+        <button>Submit</button>
+    </div>
+    
+    
+</EditForm>
