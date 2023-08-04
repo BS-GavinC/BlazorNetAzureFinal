@@ -1,8 +1,11 @@
 ﻿@layout ExoLayout
 @page "/exo/Exo1"
+@using BlazorNetAzure2.Models;
+@using FakeData
 
-<h3>Exo1</h3>
+<h3>List Voiture</h3>
 
-@code {
-
+@foreach(Voiture voit in FakeData.Voitures)
+{
+    <VoitureVignette Voit="@voit"></VoitureVignette>
 }

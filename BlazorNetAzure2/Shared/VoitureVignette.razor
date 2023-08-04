@@ -1,0 +1,20 @@
+﻿
+<div style="border : 1px solid @Voit.Color">
+    <div style="display: flex; flex-direction : row">
+        <div style="width : 500px">
+            <h6>@Voit.Brand @Voit.Model</h6>
+
+            <p>@Voit.Description</p>
+        </div>
+        <div style="justify-content : end">
+            <button @onclick="() => {OnCarClick(Voit.Id);}" class="btn btn-primary">Voir</button>
+            <NavLink href=@($"/exo/voiture/{Voit.Id}")>Voir voiture</NavLink>
+        
+        </div>
+    </div>
+    
+</div>
+
+
+
+
